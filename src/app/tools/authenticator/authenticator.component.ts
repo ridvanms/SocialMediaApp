@@ -27,7 +27,8 @@ export class AuthenticatorComponent {
         {
           email,
           onComplete: (res) => {
-            alert(`Resent email send to ${email}`)
+            // alert(`Resent email send to ${email}`)
+            this.bottomSheetRef.dismiss()
           }
         }
       )
@@ -47,7 +48,8 @@ export class AuthenticatorComponent {
           email,
           password,
           onComplete: (res) => {
-            alert("You logged in successfully!")
+            // alert("You logged in successfully!")
+            this.bottomSheetRef.dismiss()
           },
           onFail: (err) => {
             alert("Failed on log in!")
@@ -75,7 +77,8 @@ export class AuthenticatorComponent {
         email,
         password,
         onComplete: (res) => {
-          alert("Account created!")
+          // alert("Account created!")
+          this.bottomSheetRef.dismiss()
           registerEmail.value = '';
           registerPassword.value = '';
           registerConfirmPassword.value = '';

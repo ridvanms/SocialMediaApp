@@ -5,8 +5,15 @@
     </div>
     <div id="nav-bar-right">
       <div
+        *ngIf="!loggedIn()"
         (click)="onLoginClick()"
-        class="nav-bar-items">Login</div>
+        class="nav-bar-items">Login
+      </div>
+      <div
+        *ngIf="loggedIn()"
+        (click)="onLogout()"
+        class="nav-bar-items"
+      >Logout</div>
     </div>
   </div>
 </div>
