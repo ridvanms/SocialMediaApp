@@ -10,6 +10,11 @@
         class="nav-bar-items">Login
       </div>
       <div
+        *ngIf="loggedIn() && userHasProfile"
+        (click)="onLoginClick()"
+        class="nav-bar-items">Hello, {{userDocument.publicName}}
+      </div>
+      <div
         *ngIf="loggedIn()"
         (click)="onLogout()"
         class="nav-bar-items"
@@ -20,3 +25,5 @@
 
 
 <router-outlet></router-outlet>
+
+<app-profile [show]="loggedIn() && !userHasProfile" />
