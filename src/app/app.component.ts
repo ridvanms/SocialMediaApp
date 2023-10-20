@@ -13,11 +13,11 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  userHasProfile: boolean = false
+  userHasProfile: boolean = false;
 
-  auth = new FirebaseTSAuth()
-  firestore = new FirebaseTSFirestore()
-  userDocument: UserDocument = {publicName:'',description: ''}
+  auth = new FirebaseTSAuth();
+  firestore = new FirebaseTSFirestore();
+  userDocument: UserDocument = { publicName: '', description: '' };
   
   constructor(
     private loginSheet: MatBottomSheet,
@@ -28,10 +28,10 @@ export class AppComponent {
         this.auth.checkSignInState(
           {
             whenSignedIn: user => {
-              
+              // TODO
             },
             whenSignedOut: user => {
-              
+              // TODO
             },
             whenSignedInAndEmailNotVerified: user => {
               this.router.navigate(['emailVerification'])
@@ -40,7 +40,7 @@ export class AppComponent {
               this.getUserProfile()
             },
             whenChanged: user => {
-
+              // TODO
             }
           }
         )
@@ -56,6 +56,9 @@ export class AppComponent {
           this.userDocument = <UserDocument>result.data()
           
           this.userHasProfile = result.exists
+          if (this.userHasProfile) {
+            this.router.navigate(["postfeed"])
+          }
         }
       }
     );
