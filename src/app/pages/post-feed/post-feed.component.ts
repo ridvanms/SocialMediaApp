@@ -49,6 +49,6 @@ export class PostFeedComponent implements OnInit{
 export interface PostData{
   comment: string,
   creatorId: string,
-  imageUrl?: string
+  imageDownloadUrl?: string
   postId: string
 }

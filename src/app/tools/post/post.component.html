@@ -3,7 +3,7 @@
     <mat-card-title>{{creatorName}}</mat-card-title>
     <mat-card-subtitle>{{creatorDescription}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="{{postData?.imageUrl}}" alt="Background_Image">
+  <img mat-card-image [src]="postData?.imageDownloadUrl" alt="Background_Image">
   <mat-card-content>
     {{postData?.comment}}
   </mat-card-content>
