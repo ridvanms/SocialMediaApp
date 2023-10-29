@@ -32,3 +32,9 @@
   cursor: pointer;
   margin: 1em;
 }
+
+a{
+  text-decoration: none;
+  color: white;
+  font-size: larger
+}

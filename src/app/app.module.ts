@@ -21,6 +21,7 @@ import { PostFeedComponent } from './pages/post-feed/post-feed.component';
 import { CreatePostComponent } from './tools/create-post/create-post.component';
 import { PostComponent } from './tools/post/post.component';
 import { ReplyComponent } from './tools/reply/reply.component'
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { ReplyComponent } from './tools/reply/reply.component'
     MatBottomSheetModule,
     MatCardModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

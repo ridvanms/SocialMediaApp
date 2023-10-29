@@ -1,7 +1,7 @@
 <div id="nav-bar">
   <div id="nav-bar-content">
     <div id="nav-bar-left">
-      <div style="font-size: 1.5em;" class="nav-bar-items">Logo</div>
+      <div style="font-size: 1.5em;" class="nav-bar-items"> <a routerLink="/">Logo</a> </div>
     </div>
     <div id="nav-bar-right">
       <div
@@ -9,11 +9,15 @@
         (click)="onLoginClick()"
         class="nav-bar-items">Login
       </div>
-      <div
+      <a
+        *ngIf="loggedIn() && userHasProfile" 
+        routerLink="/postfeed">PostFeed
+      </a>
+      <span
         *ngIf="loggedIn() && userHasProfile"
-        (click)="onLoginClick()"
+        
         class="nav-bar-items">Hello, {{getUsername()}}
-      </div>
+      </span>
       <div
         *ngIf="loggedIn()"
         (click)="onLogout()"
