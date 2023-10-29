@@ -22,6 +22,7 @@ import { CreatePostComponent } from './tools/create-post/create-post.component';
 import { PostComponent } from './tools/post/post.component';
 import { ReplyComponent } from './tools/reply/reply.component'
 import { RouterModule } from '@angular/router';
+import { AuthenticatorService } from './tools/authenticator/authenticator.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,7 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     RouterModule
   ],
-  providers: [],
+  providers: [AuthenticatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -8,7 +8,9 @@
     </div>
   </div>
 </div>
-<div id="reply-action-bar">
+<div
+  *ngIf="this.auth.isLoggedIn()"
+  id="reply-action-bar">
     <button (click)="onSendClick(commentInput)" mat-flat-button color="warn" >
       <mat-icon>send</mat-icon>
     </button>

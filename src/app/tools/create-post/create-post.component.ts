@@ -18,7 +18,7 @@ export class CreatePostComponent implements OnInit {
   storage = new FirebaseTSStorage();
 
   constructor(
-    private dialog: MatDialogRef<CreatePostComponent>
+    private dialog: MatDialogRef<CreatePostComponent>,
   ) {
     
   }

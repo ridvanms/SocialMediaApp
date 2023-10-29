@@ -4,15 +4,13 @@
       <div style="font-size: 1.5em;" class="nav-bar-items"> <a routerLink="/">Logo</a> </div>
     </div>
     <div id="nav-bar-right">
+      <a routerLink="/postfeed">PostFeed
+      </a>
       <div
         *ngIf="!loggedIn()"
         (click)="onLoginClick()"
         class="nav-bar-items">Login
       </div>
-      <a
-        *ngIf="loggedIn() && userHasProfile" 
-        routerLink="/postfeed">PostFeed
-      </a>
       <span
         *ngIf="loggedIn() && userHasProfile"
         

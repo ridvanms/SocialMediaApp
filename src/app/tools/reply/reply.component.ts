@@ -3,6 +3,8 @@ import { FirebaseTSFirestore, OrderBy } from "firebasets/firebasetsFirestore/fir
 import { MAT_DIALOG_DATA } from "@angular/material/dialog"
 import { FirebaseTSApp } from 'firebasets/firebasetsApp/firebaseTSApp';
 import { AppComponent } from 'src/app/app.component';
+import { AuthenticatorService } from '../authenticator/authenticator.service';
+
 @Component({
   selector: 'app-reply',
   templateUrl: './reply.component.html',
@@ -12,7 +14,8 @@ export class ReplyComponent implements OnInit {
   firestore = new FirebaseTSFirestore();
   comments: Comment[] = [];
   constructor(
-    @Inject(MAT_DIALOG_DATA) private postId: string
+    @Inject(MAT_DIALOG_DATA) private postId: string,
+    public auth: AuthenticatorService
   ) { }
   ngOnInit(): void {
       this.getComments()
